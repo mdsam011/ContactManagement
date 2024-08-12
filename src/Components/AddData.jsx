@@ -27,7 +27,7 @@ const AddData = ({handlefunctions}) => {
                     <input ref={refinp1} onKeyDown={(e)=>e.key == "Enter" ?refinp2.current.focus():""} className="addIput" onChange={handleinp} type="text" name="name" value={userInp.name} id="" />
                 </div>
                 <div id="ConInputs" className={inputstyle}>
-                    <label className="pl-2" htmlFor="">Mobile Number  </label>
+                    <label className="pl-2" htmlFor="">Number</label>
                     <input ref={refinp2} className="addIput" onKeyDown={(e)=>{e.key=='Enter'?handleSubmit():""}} onChange={handleinp} type="text" name="number" value={userInp.number} id="" />
                 </div>
                  <button id="addbtn" onClick={handleSubmit} onMouseDown={Anim}  className="bg-zinc-900 px-10 py-2 mt-[20px] text-white self-center rounded-2xl">Submit</button>
