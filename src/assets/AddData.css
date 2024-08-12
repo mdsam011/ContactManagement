@@ -1,0 +1,13 @@
+.addIput{
+    box-shadow: 4px 4px 10px black;
+    border-radius: 30px;
+    padding: 0 10px;
+}
+
+#addhead{
+    box-shadow: 10px 10px 20px black;
+}
+
+#col1{
+    box-shadow: 0px 0px 15px aqua;
+}
