@@ -63,7 +63,7 @@ const EditData = ({rerender}) => {
     <>
         
         <div id="col2" className="bg-black w-3/5 overflow-hidden h-full flex items-center justify-center">
-                <div id="tab" className="bg-cyan-500 border-solid flex flex-col justify-center gap-3 border-black rounded-2xl border-2 w-[80%] overflow-y-scroll h-[84%]">
+                <div  className="bg-cyan-500 border-solid flex flex-col justify-center gap-3 border-black rounded-2xl border-2 w-[80%]  h-[84%]">
                 <h2 className="text-5xl font-bold self-center self mb-[30px]">Edit Data</h2>
                 <div className={inputstyle}>
                       <label className="pl-2" htmlFor="">Name  </label>

@@ -17,14 +17,14 @@
 }
 
 #tab::-webkit-scrollbar {
-    width: 5px;
-    border-radius: 20px;
+    width: 2px;
+    border-radius: 40px;
     background-color: white;
 }
 
 #tab::-webkit-scrollbar-thumb {
     border-radius: 100px;
-    background-color: cyan;
+    background-color: rgb(161, 30, 30);
 }
 
 /* Firefox */
@@ -32,3 +32,12 @@
     scrollbar-width:2px;
     scrollbar-color: #11f1f1 #000000;
 } */
+
+#tab{
+    border-left:2px solid #06b6d4 ;
+    border-bottom:2px solid #06b6d4 ;
+    border-top:2px solid #06b6d4 ;
+    border-right:none ;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
