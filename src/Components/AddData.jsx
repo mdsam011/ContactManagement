@@ -22,15 +22,15 @@ const AddData = ({handlefunctions}) => {
     <>
         <div id="col1" className="bg-cyan-500 w-[40%] h-full p-10 flex flex-col justify-center items-start  gap-3">
                 <h2 id="addhead" className="bg-black text-cyan-200 px-8 py-2 rounded-xl text-5xl font-bold self-center mb-[20px]">Add Data</h2>
-                <div className={inputstyle}>
+                <div id="ConInputs" className={inputstyle}>
                     <label className="pl-2" htmlFor="">Name  </label>
                     <input ref={refinp1} onKeyDown={(e)=>e.key == "Enter" ?refinp2.current.focus():""} className="addIput" onChange={handleinp} type="text" name="name" value={userInp.name} id="" />
                 </div>
-                <div className={inputstyle}>
+                <div id="ConInputs" className={inputstyle}>
                     <label className="pl-2" htmlFor="">Mobile Number  </label>
                     <input ref={refinp2} className="addIput" onKeyDown={(e)=>{e.key=='Enter'?handleSubmit():""}} onChange={handleinp} type="text" name="number" value={userInp.number} id="" />
                 </div>
-                 <button onClick={handleSubmit} onMouseDown={Anim}  className="bg-zinc-900 px-10 py-2 mt-[20px] text-white self-center rounded-2xl">Submit</button>
+                 <button id="addbtn" onClick={handleSubmit} onMouseDown={Anim}  className="bg-zinc-900 px-10 py-2 mt-[20px] text-white self-center rounded-2xl">Submit</button>
         </div>
 
     </>

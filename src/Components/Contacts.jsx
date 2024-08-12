@@ -30,7 +30,7 @@ const Contacts = ({data_del}) => {
     <>
         <div id="col2" className=" bg-zinc-950 w-3/5 overflow-hidden h-full flex flex-col items-center justify-center">
                 <h2 id="conthead" className="">Contact List</h2>
-                <div id="tab" className="border-solid border-l-cyan-500    w-[80%] overflow-y-scroll h-[84%]">
+                <div id="tab" className="border-solid border-l-cyan-500 w-[80%] overflow-y-scroll h-[84%]">
                   <table className="w-full border-separate">
                     <thead>
                       <tr className="bg-zinc-900 text-white">

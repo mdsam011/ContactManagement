@@ -99,7 +99,7 @@ const MainUi = () => {
         <div className="w-full h-full bg-zinc-900">
             <Loading/>
             <Navbar/>
-            <div className="w-full bg-slate-200 h-[83%] flex">
+            <div id="row" className="w-full bg-slate-200 h-[83%] flex">
                 <AddData handlefunctions={[handleinp,handleSubmit,userInp,refinp1]}/>
                 {/* Routes for different operations */}
                 <BrowserRouter>
