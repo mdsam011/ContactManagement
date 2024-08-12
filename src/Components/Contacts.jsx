@@ -52,6 +52,12 @@ const Contacts = ({data_del}) => {
         x:-100,
         
       })
+      tl.from("table tbody",{
+        opacity:0,
+        scale:0,
+        duration:1,
+        
+      })
       
     },{scope:trref})
 
@@ -68,7 +74,7 @@ const Contacts = ({data_del}) => {
                         <th className="border-b-2 border-black p-2">icons</th>
                       </tr>
                     </thead>
-                    <tbody >
+                    <tbody className="origin-top-left" >
                         {data.map((elem)=>(
                             <tr key={elem.id} className="even:bg-zinc-900 odd:bg-cyan-600 text-white">
                                 <td className="border-b border-black p-2 text-center">{elem.name}</td>
