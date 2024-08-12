@@ -1,5 +1,6 @@
 import gsap from "gsap";
-import { useEffect, useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
 
 
 const Navbar = () => {
@@ -7,16 +8,28 @@ const Navbar = () => {
     // Ref element to point to the nav Bar which is used by GSAP
     const navRef = useRef("")
     // GSAP for the nav Animations
-    useEffect(() => {
-        let nav1 = gsap.context(() => {
-            gsap.from(navRef.current, { 
-                x:-300,
-                duration:1,
-                opacity: 0
-            });
-        });
-        return ()=>{nav1.revert()}
-    }, []);    
+
+    useGSAP(()=>{
+        
+        gsap.from('h1,img',{
+            y:-100,
+            duration:1,
+            opacity:0,
+            stagger:0.2
+        })
+    },{scope:navRef})
+
+    // No need to use this use useGSAP() hook
+    // useEffect(() => {
+    //     let nav1 = gsap.context(() => {
+    //         gsap.from(navRef.current, { 
+    //             x:-300,
+    //             duration:1,
+    //             opacity: 0
+    //         });
+    //     });
+    //     return ()=>{nav1.revert()}
+    // }, []);    
 
   return (
     <>

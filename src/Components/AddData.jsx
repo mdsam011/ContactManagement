@@ -1,5 +1,7 @@
 import { useContext, useRef } from "react"
 import { AnimFnc } from "../App"
+import { useGSAP } from "@gsap/react"
+import { gsap } from "gsap"
 
 import '../assets/AddData.css'
 
@@ -17,10 +19,28 @@ const AddData = ({handlefunctions}) => {
 
     var Anim = useContext(AnimFnc)
 
+    var container = useRef()
+
+    useGSAP(()=>{
+        gsap.from("#addhead",{
+            opacity:0,
+            scale:0,
+            duration:1
+        })
+        
+        gsap.from("#ConInputs",{
+            opacity:0,
+            x:-200,
+            duration:1,
+            stagger:0.5
+        })
+
+    })
+
     return (
     
     <>
-        <div id="col1" className="bg-cyan-500 w-[40%] h-full p-10 flex flex-col justify-center items-start  gap-3">
+        <div ref={container} id="col1" className="bg-cyan-500 w-[40%] h-full p-10 flex flex-col justify-center items-start  gap-3">
                 <h2 id="addhead" className="bg-black text-cyan-200 px-8 py-2 rounded-xl text-5xl font-bold self-center mb-[20px]">Add Data</h2>
                 <div id="ConInputs" className={inputstyle}>
                     <label className="pl-2" htmlFor="">Name  </label>

@@ -1,7 +1,9 @@
-import { useContext } from "react"
+import { useContext, useRef } from "react"
 import { useNavigate } from "react-router-dom"
 import { AnimFnc, ProgressFnc } from "../App"
 import '../assets/Contact.css'
+import { useGSAP } from "@gsap/react"
+import gsap from "gsap"
 
 // eslint-disable-next-line react/prop-types
 const Contacts = ({data_del}) => {
@@ -26,10 +28,37 @@ const Contacts = ({data_del}) => {
         nav('/Edit',{state:id})
     }
 
+  const trref = useRef()
+
+    useGSAP(()=>{ 
+      gsap.from("#conthead",{
+        opacity:0,
+        duration:1,
+        y:-200,
+        rotate:360
+      })
+
+      var tl = gsap.timeline()
+      tl.from("table thead tr",{
+        opacity: 1,
+        duration: 1,
+        y: -100,
+      })
+
+      tl.from("table thead tr th",{
+        opacity:0,
+        duration:1,
+        stagger:0.3,
+        x:-100,
+        
+      })
+      
+    },{scope:trref})
+
   return (
     <>
-        <div id="col2" className=" bg-zinc-950 w-3/5 overflow-hidden h-full flex flex-col items-center justify-center">
-                <h2 id="conthead" className="">Contact List</h2>
+      <div ref={trref} id="col2" className=" bg-zinc-950 w-3/5 overflow-hidden h-full flex flex-col items-center justify-center">
+        <h2 id="conthead" className="contactheading mb-2">Contact List</h2>
                 <div id="tab" className="border-solid border-l-cyan-500 w-[80%] overflow-y-scroll h-[84%]">
                   <table className="w-full border-separate">
                     <thead>
@@ -39,7 +68,7 @@ const Contacts = ({data_del}) => {
                         <th className="border-b-2 border-black p-2">icons</th>
                       </tr>
                     </thead>
-                    <tbody>
+                    <tbody >
                         {data.map((elem)=>(
                             <tr key={elem.id} className="even:bg-zinc-900 odd:bg-cyan-600 text-white">
                                 <td className="border-b border-black p-2 text-center">{elem.name}</td>
