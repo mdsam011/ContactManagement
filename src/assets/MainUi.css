@@ -24,6 +24,10 @@
 /*  Responsive  */
 @media(max-width:900px)
 {
+    #navhead{
+        font-size:30px
+    }
+
     #addhead,#Edithead{
         font-size:20px
     }
@@ -63,9 +67,11 @@
         align-items:center
     }
     #ConInputs input {
-        font-size:20px;
+        font-size:15px;
+        font-weight:500;
         height:90%;
-        width:62%
+        width:62%;
+        border-radius:10px;
     }
     #ConInputs label {
         font-weight:500;
@@ -92,10 +98,48 @@
         padding:4px 20px;
     }
 
+    #row #col2 #tab {
+        font-size:14px
+    }
+
     #Ecol2{
         width:100%; 
         justify-content:center;
     }
+
+    #Edithead{
+        background-color:black;
+        color:cyan;
+        border-radius:10px;
+        box-shadow :4px 4px 10px black;
+        margin-bottom:10px;
+    }
+
+    #Editinputs{
+        font-size: 20px;
+         width: 100%;
+        height: 100px;
+            padding: 0 10px;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center
+    }
+        #Editinputs input {
+            font-size: 15px;
+            font-weight: 500;
+            height: 38%;
+            width: 62%;
+            border-radius: 10px;
+        }
+    
+        #Editinputs label {
+            font-size:20px;
+            font-weight: 500;
+        }
+
+    #Ecol2 #Etab{
+        gap:0
+    }   
 
 }
 

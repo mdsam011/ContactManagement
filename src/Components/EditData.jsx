@@ -78,7 +78,7 @@ const EditData = ({rerender}) => {
                     <input className="addIput" onChange={HandleInput}  type="text" name="name" value={userInp.name}  id="" />
                 </div>
                 <div id="Editinputs" className={inputstyle}>
-                      <label className="pl-2" htmlFor="">Mobile Number </label>
+                      <label className="pl-2" htmlFor="">Number</label>
                       <input className="addIput" onChange={HandleInput} type="text" name="number" value={userInp.number} id="" />
                 </div>
                 <div className="flex gap-2 self-center">
