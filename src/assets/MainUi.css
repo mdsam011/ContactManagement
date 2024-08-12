@@ -24,11 +24,11 @@
 /*  Responsive  */
 @media(max-width:900px)
 {
-    #addhead{
+    #addhead,#Edithead{
         font-size:20px
     }
     
-    #ConInputs   {
+    #ConInputs ,#Editinputs  {
         font-size:20px
     }
 }
@@ -48,7 +48,7 @@
         gap:10px;
     }
     
-    #addhead {
+    #addhead ,#Edithead {
         font-size: 20px;
         padding: 10px 40px;
     }
@@ -70,7 +70,7 @@
     #ConInputs label {
         font-weight:500;
     }
-    #addbtn{
+    #addbtn,#sumbit,#back{
         padding:8px 20px;
     }
 
@@ -90,6 +90,11 @@
     #conthead{
         margin-top:10px;
         padding:4px 20px;
+    }
+
+    #Ecol2{
+        width:100%; 
+        justify-content:center;
     }
 
 }

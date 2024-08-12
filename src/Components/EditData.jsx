@@ -70,14 +70,14 @@ const EditData = ({rerender}) => {
   return (
     <>
         
-        <div id="col2" className="bg-black w-3/5 overflow-hidden h-full flex items-center justify-center">
-                <div  className="bg-cyan-500 border-solid flex flex-col justify-center gap-3 border-black rounded-2xl border-2 w-[80%]  h-[84%]">
-                <h2 className="text-5xl font-bold self-center self mb-[30px]">Edit Data</h2>
-                <div className={inputstyle}>
+        <div id="Ecol2" className="Ecol2 bg-black w-3/5 overflow-hidden h-full flex items-center justify-center">
+                <div id="Etab"  className="bg-cyan-500 border-solid flex flex-col justify-center gap-3 border-black rounded-2xl border-2 w-[80%]  h-[84%]">
+                  <h2 id="Edithead" className="text-5xl font-bold self-center self mb-[30px]">Edit Data</h2>
+                <div id="Editinputs" className={inputstyle}>
                       <label className="pl-2" htmlFor="">Name  </label>
                     <input className="addIput" onChange={HandleInput}  type="text" name="name" value={userInp.name}  id="" />
                 </div>
-                <div className={inputstyle}>
+                <div id="Editinputs" className={inputstyle}>
                       <label className="pl-2" htmlFor="">Mobile Number </label>
                       <input className="addIput" onChange={HandleInput} type="text" name="number" value={userInp.number} id="" />
                 </div>
