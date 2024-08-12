@@ -1,4 +1,4 @@
-import {  useContext, useEffect } from "react"
+import {  useContext, useEffect, useRef } from "react"
 import { useState } from "react"
 import AddData from "./AddData"
 import Contacts from "./Contacts"
@@ -26,6 +26,7 @@ const MainUi = () => {
         number:""
     })
 
+    var refinp1 = useRef("")
     var Progress = useContext(ProgressFnc)
     
 
@@ -61,6 +62,8 @@ const MainUi = () => {
             getdata()
         }
         Progress()
+        console.log("hello ref1 ",refinp1.current)
+        refinp1.current.focus()
     }
     
     var del = async (id)=>{
@@ -87,7 +90,7 @@ const MainUi = () => {
             <Loading/>
             <Navbar/>
             <div className="w-full bg-slate-200 h-[83%] flex">
-                <AddData handlefunctions={[handleinp,handleSubmit,userInp]}/>
+                <AddData handlefunctions={[handleinp,handleSubmit,userInp,refinp1]}/>
                 <BrowserRouter>
                     <Routes>
                         <Route path="/" element={<Contacts data_del={[data,del]} />}/>

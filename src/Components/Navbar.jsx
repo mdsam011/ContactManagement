@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react";
 const Navbar = () => {
 
     const navRef = useRef("")
-    const navRef2 = useRef("")
+    
     useEffect(() => {
         let nav1 = gsap.context(() => {
             gsap.from(navRef.current, { 
