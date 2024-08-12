@@ -6,12 +6,21 @@ import '../assets/Contact.css'
 // eslint-disable-next-line react/prop-types
 const Contacts = ({data_del}) => {
 
+    // Destructing the props sent from the MainUi.jsx Component
     var [data,del] = data_del
 
+    // Progress and Anim Function Coming From App.jsx using UseCOntext
     var Progress =useContext(ProgressFnc)
     var Anim =useContext(AnimFnc)
 
+    // useNaviagte hook that is used to rendered components based on the path and can also take data with it
     var nav = useNavigate()
+    
+    //Edit Function that handles editing the data
+    //Each Editing Icon has the id same as the data ,so whenever the user clicks on the Edit Button,
+    // its is also passed whih the help of a callback
+    // after this the Component at path=/edit is rendered and the id is also sent to that component using
+    // useNavigate hook 
     var edit = (id) =>{
         Progress()
         nav('/Edit',{state:id})

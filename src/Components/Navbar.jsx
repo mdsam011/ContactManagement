@@ -4,8 +4,9 @@ import { useEffect, useRef } from "react";
 
 const Navbar = () => {
 
+    // Ref element to point to the nav Bar which is used by GSAP
     const navRef = useRef("")
-    
+    // GSAP for the nav Animations
     useEffect(() => {
         let nav1 = gsap.context(() => {
             gsap.from(navRef.current, { 
@@ -14,11 +15,7 @@ const Navbar = () => {
                 opacity: 0
             });
         });
-        
-
-
         return ()=>{nav1.revert()}
-        
     }, []);    
 
   return (

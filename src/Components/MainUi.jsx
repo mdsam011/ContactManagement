@@ -10,36 +10,43 @@ import {  ProgressFnc } from "../App"
 
 import '../assets/MainUi.css'
 import Navbar from "./Navbar"
-
 import PageUi from "./PageUi"
 
 
 const MainUi = () => {
 
+    // State that Recieves Data From the Mock Api
     const [data,setdata] = useState(()=>{
         // return JSON.parse(localStorage.getItem("data")) 
         return []
     })
     
+    // State to to store the Temporary UserInputs
     const [userInp, setuserInp] =  useState({
         name :"",
         number:""
     })
 
+    // Ref Element Which Points to the Name Input Inside the AddData Component 
     var refinp1 = useRef("")
+
+    // Using The Progress Function Defined in the App Componenet using UseContext Hook
     var Progress = useContext(ProgressFnc)
     
-
+    // Function Ehich Does a Asynchronous Call the the API to get the Data
     var getdata = async () =>{
         var res = await axios.get("https://66b429ba9f9169621ea1ece1.mockapi.io/Contacts")
         setdata(res.data)
         console.log(res.data)
     }
 
+    // UseEffect Hook Invokes the Getdata Function at the First Render of this Component
+    // it Make Sures that we get Data When Our COmponent is Being rendered
     useEffect(()=>{
         getdata()
     },[])
 
+    // Handles the Input Fields of the AddData Component 
     const handleinp = (e) =>{
         console.log(userInp)
         if(e.target.name == "name")
@@ -49,7 +56,9 @@ const MainUi = () => {
         // console.log(userInp)
     }
 
-    // Function that adds new data to the data state 
+    // Function to Submitting Data and Storing the data to the MOCK SERVER using API
+    // inside this if the request is successful then we render the component using getdata method,
+    // because we know whenever the state changes the component will rerednder
     var handleSubmit =async () =>{
         // setdata((prev)=>{
         //     return [...prev,userInp]
@@ -66,6 +75,7 @@ const MainUi = () => {
         refinp1.current.focus()
     }
     
+    // Function Which Deletes the Data Stored on Mock Server with API through an Async delete Request
     var del = async (id)=>{
         console.log(data)
         console.log(id)
@@ -91,6 +101,7 @@ const MainUi = () => {
             <Navbar/>
             <div className="w-full bg-slate-200 h-[83%] flex">
                 <AddData handlefunctions={[handleinp,handleSubmit,userInp,refinp1]}/>
+                {/* Routes for different operations */}
                 <BrowserRouter>
                     <Routes>
                         <Route path="/" element={<Contacts data_del={[data,del]} />}/>

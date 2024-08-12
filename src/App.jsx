@@ -9,6 +9,7 @@ const App = () => {
 
 
 
+  // Function that trigger the gsap effect to the short refresh 
   var Progress = () => {
     var load = document.querySelector("#load")
     var p = gsap.to(load, {
@@ -21,6 +22,7 @@ const App = () => {
     },300)
   }
 
+  // Function for the button click eFFECT
   var anim = (e)=>{
     console.log("Anim Function",e.target)
     e.target.style.transition = ".3s"

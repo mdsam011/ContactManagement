@@ -9,9 +9,10 @@ const AddData = ({handlefunctions}) => {
     var inputstyle = `flex flex-col items-start self-center text-3xl gap-4`
 
     
+    // Referencing 2nd input field using useRef to gain some functionality when an event occurs
     var refinp2 = useRef("")
 
-
+    // Destructing the props sent from the MainUi.jsx Component
     const [handleinp,handleSubmit,userInp,refinp1] = handlefunctions
 
     var Anim = useContext(AnimFnc)
